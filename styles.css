@@ -27,7 +27,7 @@ footer {
     display: flex;
     flex-direction: column; /* Stack images vertically */
     align-items: center; /* Center images horizontally */
-    gap: 20px; /* Add spacing between the images */
+    gap: 50px; /* Add spacing between the images */
     margin-top: 20px;
 }
 
@@ -42,6 +42,7 @@ footer {
 
 .image-container .top-image {
     background-image: url('download.jpeg'); /* First image */
+    margin-bottom: 50px; /* Larger margin below the first image */
 }
 
 .image-container .bottom-image {
