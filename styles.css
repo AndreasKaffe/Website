@@ -4,17 +4,46 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
 }
+
 main {
     padding: 1rem;
 }
+
 footer {
     text-align: center;
     background: #f4f4f4;
     padding: 1rem;
+}
+
+/* Add styles for image containers */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+    gap: 20px; /* Add spacing between the images */
+    margin-top: 20px;
+}
+
+.image-container .top-image,
+.image-container .bottom-image {
+    width: 300px;
+    height: 200px;
+    background-size: cover; /* Ensure images cover the container */
+    background-position: center; /* Center the image in the container */
+    border: 1px solid #ccc; /* Optional: Add a border around images */
+}
+
+.image-container .top-image {
+    background-image: url('download.jpeg'); /* First image */
+}
+
+.image-container .bottom-image {
+    background-image: url('9fu8io.jpg'); /* Second image */
 }
