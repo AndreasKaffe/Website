@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Header styles */
 header {
     background: #333;
     color: #fff;
@@ -12,17 +14,19 @@ header {
     text-align: center;
 }
 
+/* Main content styles */
 main {
     padding: 1rem;
 }
 
+/* Footer styles */
 footer {
     text-align: center;
     background: #f4f4f4;
     padding: 1rem;
 }
 
-/* Add styles for image containers */
+/* Image container styles */
 .image-container {
     display: flex;
     flex-direction: column; /* Stack images vertically */
@@ -31,21 +35,24 @@ footer {
     margin-top: 20px;
 }
 
+/* Top image styles */
 .image-container .top-image {
-    margin-bottom: 50px; /* Adds 50px spacing below the first image */
+    width: 300px;
+    height: 200px;
+    background-image: url('download.jpeg'); /* Path to the top image */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    border: 1px solid #ccc; /* Optional: border around the image */
+    margin-bottom: 50px; /* Space below the top image */
+}
+
+/* Bottom image styles */
 .image-container .bottom-image {
     width: 300px;
     height: 200px;
-    background-size: cover; /* Ensure images cover the container */
-    background-position: center; /* Center the image in the container */
-    border: 1px solid #ccc; /* Optional: Add a border around images */
+    background-image: url('9fu8io.jpg'); /* Path to the bottom image */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    border: 1px solid #ccc; /* Optional: border around the image */
 }
 
-.image-container .top-image {
-    background-image: url('download.jpeg'); /* First image */
-    margin-bottom: 50px; /* Larger margin below the first image */
-}
-
-.image-container .bottom-image {
-    background-image: url('9fu8io.jpg'); /* Second image */
-}
