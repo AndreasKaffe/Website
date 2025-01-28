@@ -4,11 +4,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
 }
 
 /* Header styles */
 header {
-    background: #333;
+    background-color: #333;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -17,42 +18,37 @@ header {
 /* Main content styles */
 main {
     padding: 1rem;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center content horizontally */
 }
 
 /* Footer styles */
 footer {
     text-align: center;
-    background: #f4f4f4;
+    background-color: #f4f4f4;
     padding: 1rem;
+    position: fixed; /* Make footer stick to the bottom */
+    bottom: 0;
+    width: 100%;
 }
 
 /* Image container styles */
-.image-container {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    align-items: center; /* Center images horizontally */
-    gap: 50px; /* Add spacing between the images */
-    margin-top: 20px;
+figure {
+    margin: 20px 0; 
+    text-align: center; 
 }
 
-/* Top image styles */
-.image-container .top-image {
-    width: 300px;
-    height: 200px;
-    background-image: url('download.jpeg'); /* Path to the top image */
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center; /* Center the image */
-    border: 1px solid #ccc; /* Optional: border around the image */
-    margin-bottom: 50px; /* Space below the top image */
+/* Image styles */
+figure img {
+    max-width: 300px; /* Responsive image sizing */
+    height: auto; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 
-/* Bottom image styles */
-.image-container .bottom-image {
-    width: 300px;
-    height: 200px;
-    background-image: url('9fu8io.jpg'); /* Path to the bottom image */
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center; /* Center the image */
-    border: 1px solid #ccc; /* Optional: border around the image */
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    figure img {
+        max-width: 100%; 
+    }
 }
-
