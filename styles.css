@@ -86,3 +86,29 @@ footer {
   font-size: 0.875rem;
 }
 
+@media (max-width: 600px) {
+  .nav-container .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  nav .nav-menu a {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+main img, main video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  overflow-x: auto;
+}
+
