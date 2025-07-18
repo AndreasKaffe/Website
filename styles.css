@@ -56,3 +56,27 @@ nav .nav-menu a:focus {
 @media (max-width: 600px) {
   /* keep default collapse rules from before */
 }
+
+/* 1. Update the root bg color */
+:root {
+    /* light‑grey page background */
+    --color-bg: #f5f5f5;
+}
+
+/* 2. Apply to body */
+body {
+    background-color: var(--color-bg);
+}
+
+/* 3. Content container stays white for readability */
+.container, main {
+    background-color: #ffffff;
+}
+
+/* 4. Optional: add a subtle border or shadow to content area */
+main {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    padding: var(--space);
+}
+
