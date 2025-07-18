@@ -1,82 +1,195 @@
-/* --- Navigation Container --- */
-.nav-container {
-  background-color: #004466;        /* Dark blue bar */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
 
-/* --- Horizontal Menu Styling --- */
-nav .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: calc(var(--space) * 1.5);
-  padding: 0;
-  margin: 0;
-}
 
-nav .nav-menu a {
-  display: block;
-  padding: 0.75rem 1.25rem;
-  font-weight: 700;                 /* Thicker text */
-  letter-spacing: 0.05em;           /* Slight tracking for clarity */
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  border-radius: var(--radius);
-  transition: background-color 0.25s, transform 0.15s;
-}
-
-/* Active link style */
-nav .nav-menu a.active {
-  background-color: #ffa500;        /* Bright accent (orange) */
-  color: #004466;
-}
-
-/* Hover & focus states */
-nav .nav-menu a:hover,
-nav .nav-menu a:focus {
-  background-color: #0277bd;        /* Lighter blue on hover */
-  transform: translateY(-2px);
-}
-
-/* Adjust site title spacing */
-.site-title {
-  margin-right: 2rem;
-  font-size: 1.25rem;
-  color: #fff;
-}
-
-/* Ensure nav and title align centrally */
-.nav-container .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Mobile still collapsible if you add toggler */
-@media (max-width: 600px) {
-  /* keep default collapse rules from before */
-}
-
-/* 1. Update the root bg color */
+/* ==========================================================================
+   1. Theme Variables
+   ========================================================================== */
 :root {
-    /* light‑grey page background */
-    --color-bg: #f5f5f5;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 Arial, sans-serif;
+    --color-bg: #f5f5f5;           /* light‑grey page background */
+    --color-header: #004466;       /* dark blue nav bar */
+    --color-header-text: #ffffff;  /* header text */
+    --color-text: #222222;         /* body text */
+    --color-footer-bg: #f4f4f4;     /* footer background */
+    --color-border: #cccccc;       /* borders */
+    --color-accent: #ffa500;       /* active link accent */
+    --color-hover: #0277bd;        /* hover state */
+    --space: 1rem;                 /* base spacing */
+    --radius: 0.3125rem;           /* border‑radius (5px) */
 }
 
-/* 2. Apply to body */
+/* ==========================================================================
+   2. Global Resets & Base Layout
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    line-height: 1.6;
     background-color: var(--color-bg);
+    color: var(--color-text);
 }
 
-/* 3. Content container stays white for readability */
-.container, main {
-    background-color: #ffffff;
+/* ==========================================================================
+   3. Header & Navigation
+   ========================================================================== */
+header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* 4. Optional: add a subtle border or shadow to content area */
-main {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border-radius: var(--radius);
+.nav-container {
+    background-color: var(--color-header);
+}
+
+.nav-container .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 50rem;      /* 800px */
+    margin: 0 auto;
     padding: var(--space);
 }
 
+.site-title {
+    font-size: 1.25rem;
+    color: var(--color-header-text);
+    margin-right: 2rem;
+}
+
+nav .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: calc(var(--space) * 1.5);
+}
+
+nav .nav-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-header-text);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: background-color 0.25s, transform 0.15s;
+}
+
+nav .nav-menu a:hover,
+nav .nav-menu a:focus {
+    background-color: var(--color-hover);
+    transform: translateY(-2px);
+}
+
+nav .nav-menu a.active {
+    background-color: var(--color-accent);
+    color: var(--color-header);
+}
+
+/* ==========================================================================
+   4. Main Content Area
+   ========================================================================== */
+.container,
+main {
+    background-color: #ffffff;
+}
+
+main {
+    flex: 1;
+    padding: var(--space);
+    max-width: 50rem;      /* 800px */
+    width: 100%;
+    margin: var(--space) auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
+footer {
+    background-color: var(--color-footer-bg);
+    padding: var(--space);
+    text-align: center;
+    font-size: 0.875rem;   /* 14px */
+}
+
+/* ==========================================================================
+   6. Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: calc(var(--space) / 2);
+}
+
+h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+
+p + h2 {
+    margin-top: var(--space);
+}
+
+/* ==========================================================================
+   7. Figures & Images
+   ========================================================================== */
+figure {
+    margin: var(--space) 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   8. Utility Classes
+   ========================================================================== */
+/* For screen‑reader only text */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   9. Focus Styles (Accessibility)
+   ========================================================================== */
+:focus {
+    outline: 2px dashed #005fcc;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   10. Print Styles
+   ========================================================================== */
+@media print {
+    body  { background: #fff; color: #000; }
+    header, footer { display: none; }
+}
+
+/* ==========================================================================
+   11. Responsive (Mobile‑First)
+   ========================================================================== */
+@media (min-width: 37.5rem) { /* 600px */
+    main {
+        padding: calc(var(--space) * 1.5);
+    }
+}
