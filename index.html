@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-  <div class="container nav-container">
-    <h1 class="site-title">My Static Website</h1>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Static Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
   <header>
-    <div class="container">
-      <h1>My Static Website</h1>
+    <div class="container nav-container">
+      <!-- Only H1 on the page: site title -->
+      <h1 class="site-title">My Static Website</h1>
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html" class="active">Home</a></li>
@@ -30,8 +23,37 @@
   </header>
 
   <main>
-    <p>This is a static website example.</p>
-    <!-- rest of your index content -->
+    <!-- Demote the long tagline to H2 (or <p>) -->
+    <section>
+      <h2>Når jobben ikke tilfredsstiller nok stimuli til hjernen…</h2>
+      <p>
+        Jeg sitter her som ingeniør i en uoffisiell dobbeltrolle som finans‑akrobat, og girer olje‑sertifikater 
+        og andre derivater som om det var en ingeniørutfordring i Excel‑form. Det er som å bygge bro mellom 
+        det rasjonelle og det uforutsigbare – med kalkulatoren i den ene hånden og kaffekoppen i den andre.
+      </p>
+      <p>
+        En mental CrossFit‑økt, der jeg samtidig forsøker å holde hodet kaldt
+        og Excel‑arkene ryddige. Hvem trenger Sudoku når man kan leke aksjemarkedets MacGyver?
+      </p>
+    </section>
+
+    <section>
+      <h2>A Day Without Trading is Not a Day to Wake Up To</h2>
+      <figure>
+        <picture>
+          <source srcset="download.webp" type="image/webp">
+          <img src="download.jpeg" alt="Line chart showing oil‑price fluctuations, Q1–Q2 2025" loading="lazy">
+        </picture>
+        <figcaption>Top image description</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source srcset="9fu8io.webp" type="image/webp">
+          <img src="9fu8io.jpg" alt="Bar graph comparing quarterly returns" loading="lazy">
+        </picture>
+        <figcaption>Bottom image description</figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer>
